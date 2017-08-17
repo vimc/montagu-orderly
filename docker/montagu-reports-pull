@@ -1,0 +1,4 @@
+#!/bin/sh
+set -ex
+export GIT_SSH_COMMAND='ssh -i /orderly/.ssh/id_rsa -o UserKnownHostsFile=/orderly/.ssh/known_hosts'
+git -C /orderly pull

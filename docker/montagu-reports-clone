@@ -1,0 +1,13 @@
+#!/bin/sh
+set -ex
+export GIT_SSH_COMMAND='ssh -i /orderly/.ssh/id_rsa -o UserKnownHostsFile=/orderly/.ssh/known_hosts'
+
+# NOTE: In order to use .Renviron and .ssh some slight of hand is
+# required, and a simple clone won't actually work
+git init /orderly
+git -C /orderly remote add origin git@github.com:vimc/montagu-reports.git
+git -C /orderly pull origin master
+git -C /orderly branch -u origin/master
+
+# We might as well build a blank index
+/usr/bin/montagu-reports-init
