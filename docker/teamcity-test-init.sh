@@ -3,7 +3,7 @@ set -x
 GIT_ID=$(git rev-parse --short HEAD)
 GIT_BRANCH=$(git symbolic-ref --short HEAD)
 REGISTRY=docker.montagu.dide.ic.ac.uk:5000
-NAME=montagu-reports
+NAME=montagu-orderly
 
 APP_DOCKER_TAG=$REGISTRY/$NAME
 APP_DOCKER_COMMIT_TAG=$REGISTRY/$NAME:$GIT_ID
