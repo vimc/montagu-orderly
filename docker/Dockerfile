@@ -35,7 +35,11 @@ RUN mkdir -p /opt/pandoc \
   && ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin \
   && rm -f /tmp/pandoc.zip
 
-RUN install.r \
+# dependencies for R packages
+RUN apt-get update && apt-get install \
+  libxml2-dev
+
+RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
   ggplot2 \
