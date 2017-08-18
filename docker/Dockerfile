@@ -36,7 +36,7 @@ RUN mkdir -p /opt/pandoc \
   && rm -f /tmp/pandoc.zip
 
 # dependencies for R packages
-RUN apt-get update && apt-get install \
+RUN apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
   libxml2-dev
 
