@@ -49,6 +49,11 @@ RUN install2.r --error \
   knitr \
   markdown
 
+ARG GIT_ID='UNKNOWN'
+ARG GIT_BRANCH='UNKNOWN'
+ENV ORDERLY_MONTAGU_GIT_HASH $GIT_ID
+ENV ORDERLY_MONTAGU_GIT_BRANCH $GIT_BRANCH
+
 COPY orderly_config.yml /etc/montagu/orderly_config.yml
 COPY docker/orderly_init /usr/bin/orderly_init
 COPY docker/montagu-reports-clone /usr/bin/montagu-reports-clone
