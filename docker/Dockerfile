@@ -1,4 +1,4 @@
-FROM docker.montagu.dide.ic.ac.uk:5000/orderly:63c08e2
+FROM docker.montagu.dide.ic.ac.uk:5000/orderly:238d6a9
 
 RUN apt-get update && apt-get install -y git
 
