@@ -1,6 +1,6 @@
 FROM docker.montagu.dide.ic.ac.uk:5000/orderly:9008e65
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update || apt-get update && apt-get install -y git
 
 # Install LaTeX
 RUN apt-get update \
