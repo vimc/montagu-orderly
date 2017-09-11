@@ -2,8 +2,9 @@
 set -ex
 export GIT_SSH_COMMAND='ssh -i /orderly/.ssh/id_rsa -o UserKnownHostsFile=/orderly/.ssh/known_hosts'
 
-# NOTE: In order to use .Renviron and .ssh some slight of hand is
-# required, and a simple clone won't actually work
+# NOTE: In order to do a clone while retaining .Renviron and .ssh some
+# slight of hand is required, and a simple clone won't actually work
+# (clone only works into an empty directory).
 git init /orderly
 git -C /orderly remote add origin git@github.com:vimc/montagu-reports.git
 git -C /orderly pull origin master
