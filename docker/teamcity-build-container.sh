@@ -10,7 +10,7 @@ APP_DOCKER_TAG=$REGISTRY/$NAME
 APP_DOCKER_COMMIT_TAG=$REGISTRY/$NAME:$GIT_ID
 APP_DOCKER_BRANCH_TAG=$REGISTRY/$NAME:$GIT_BRANCH
 
-docker build -pull \
+docker build --pull \
        --build-arg GIT_ID=$GIT_ID \
        --build-arg GIT_BRANCH=$GIT_BRANCH \
        --tag $APP_DOCKER_COMMIT_TAG \
