@@ -38,6 +38,7 @@ RUN mkdir -p /opt/pandoc \
 # dependencies for R packages
 RUN apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
+  libmagick++-dev \
   libxml2-dev
 
 RUN install2.r --error \
