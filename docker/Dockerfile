@@ -60,3 +60,5 @@ COPY docker/orderly_init /usr/bin/orderly_init
 COPY docker/montagu-reports-clone /usr/bin/montagu-reports-clone
 COPY docker/montagu-reports-pull /usr/bin/montagu-reports-pull
 COPY docker/montagu-reports-init /usr/bin/montagu-reports-init
+
+WORKDIR /orderly
