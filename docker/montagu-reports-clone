@@ -1,8 +1,7 @@
 #!/bin/sh
 set -ex
-export GIT_SSH_COMMAND='ssh -i /orderly/.ssh/id_rsa -o UserKnownHostsFile=/orderly/.ssh/known_hosts'
 
-# NOTE: In order to do a clone while retaining .Renviron and .ssh some
+# NOTE: In order to do a clone while retaining .Renviron some
 # slight of hand is required, and a simple clone won't actually work
 # (clone only works into an empty directory).
 git init /orderly
