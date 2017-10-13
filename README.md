@@ -13,7 +13,7 @@ docker pull docker.montagu.dide.ic.ac.uk:5000/montagu-orderly:master
 Update the montagu-report repo on the orderly volume
 
 ```
-./orderly_montagu_sh.sh montagu-reports-pull
+./orderly_montagu_sh.sh git pull
 ```
 
 Run orderly commands with
