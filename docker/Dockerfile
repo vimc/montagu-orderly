@@ -48,7 +48,8 @@ RUN install2.r --error \
   gridExtra \
   kableExtra \
   knitr \
-  markdown
+  markdown \
+  dplyr
 
 ARG GIT_ID='UNKNOWN'
 ARG GIT_BRANCH='UNKNOWN'
