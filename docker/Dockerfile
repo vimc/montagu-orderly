@@ -51,6 +51,7 @@ RUN install2.r --error \
   gridExtra \
   kableExtra \
   knitr \
+  magick \
   markdown \
   tidyr
 
