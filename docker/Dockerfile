@@ -47,6 +47,7 @@ RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
   dplyr \
+  drat \
   ggplot2 \
   gridExtra \
   kableExtra \
