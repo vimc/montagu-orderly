@@ -35,21 +35,26 @@ RUN mkdir -p /opt/pandoc \
   && ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin \
   && rm -f /tmp/pandoc.zip
 
-# dependencies for R packages
+# system dependencies required to install and run R packages (in
+# alphabetical order)
 RUN apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
   libmagick++-dev \
   libxml2-dev
 
+# Add new packages here (in alphabetical order)
 RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
+  dplyr \
+  drat \
   ggplot2 \
   gridExtra \
   kableExtra \
   knitr \
+  magick \
   markdown \
-  dplyr
+  tidyr
 
 ARG GIT_ID='UNKNOWN'
 ARG GIT_BRANCH='UNKNOWN'
