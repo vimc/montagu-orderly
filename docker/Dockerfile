@@ -5,7 +5,7 @@ RUN apt-get update || apt-get update && apt-get install -y git
 # Install LaTeX
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-         ghostscript \
+    ghostscript \
     imagemagick \
     lmodern \
     texlive-fonts-recommended \
@@ -23,17 +23,10 @@ RUN apt-get update \
   && updmap-sys
 
 # Install Pandoc
-#
-# https://hub.docker.com/r/cardcorp/r-pandoc/~/dockerfile/
-RUN mkdir -p /opt/pandoc \
-  && wget --no-check-certificate -O /tmp/pandoc.zip https://s3.amazonaws.com/rstudio-buildtools/pandoc-1.13.1.zip \
-  && unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc" -d /opt/pandoc \
-  && chmod +x /opt/pandoc/pandoc \
-  && ln -s /opt/pandoc/pandoc /usr/local/bin \
-  && unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc-citeproc" -d /opt/pandoc \
-  && chmod +x "/opt/pandoc/pandoc-citeproc" \
-  && ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin \
-  && rm -f /tmp/pandoc.zip
+ENV PANDOC_VERSION "1.19.2.1"
+RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb \
+  && dpkg --install pandoc-${PANDOC_VERSION}-1-amd64.deb \
+  && rm pandoc-${PANDOC_VERSION}-1-amd64.deb
 
 # system dependencies required to install and run R packages (in
 # alphabetical order)
