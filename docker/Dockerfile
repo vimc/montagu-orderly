@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
 RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
+  captioner \
   dplyr \
   drat \
   ggplot2 \
@@ -47,6 +48,7 @@ RUN install2.r --error \
   knitr \
   magick \
   markdown \
+  readxl \
   tidyr
 
 ARG GIT_ID='UNKNOWN'
