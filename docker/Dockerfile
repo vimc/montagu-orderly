@@ -49,6 +49,7 @@ RUN install2.r --error \
   magick \
   markdown \
   readxl \
+  spelling \
   tidyr
 
 ARG GIT_ID='UNKNOWN'
