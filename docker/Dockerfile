@@ -43,6 +43,7 @@ RUN install2.r --error \
   dplyr \
   drat \
   ggplot2 \
+  ggpubr \
   gridExtra \
   kableExtra \
   knitr \
