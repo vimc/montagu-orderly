@@ -1,4 +1,4 @@
-FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:aaf64f2
+FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:51680f5
 
 RUN apt-get update || apt-get update && apt-get install -y git
 
@@ -43,12 +43,15 @@ RUN install2.r --error \
   dplyr \
   drat \
   ggplot2 \
+  ggpubr \
   gridExtra \
   kableExtra \
   knitr \
   magick \
   markdown \
+  pander \
   readxl \
+  spelling \
   tidyr
 
 ARG GIT_ID='UNKNOWN'
