@@ -49,6 +49,7 @@ RUN install2.r --error \
   knitr \
   magick \
   markdown \
+  pander \
   readxl \
   spelling \
   tidyr
