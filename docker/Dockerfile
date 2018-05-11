@@ -43,6 +43,7 @@ RUN R CMD javareconf
 RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
+  ReporteRs \
   captioner \
   dplyr \
   drat \
@@ -55,7 +56,6 @@ RUN install2.r --error \
   markdown \
   pander \
   readxl \
-  rJava \
   spelling \
   tidyr
 
