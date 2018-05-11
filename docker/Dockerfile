@@ -51,6 +51,7 @@ RUN install2.r --error \
   markdown \
   pander \
   readxl \
+  rJava \
   spelling \
   tidyr
 
