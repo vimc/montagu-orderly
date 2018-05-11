@@ -36,6 +36,9 @@ RUN apt-get update && apt-get install -y \
   libmagick++-dev \
   libxml2-dev
 
+# This is needed so that rJava can find the interpreter correctly
+RUN R CMD javareconf
+
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
   RColorBrewer \
