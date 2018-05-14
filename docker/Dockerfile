@@ -31,10 +31,11 @@ RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 # system dependencies required to install and run R packages (in
 # alphabetical order)
 RUN apt-get update && apt-get install -y \
-  default-jdk \
-  libcurl4-openssl-dev \
-  libmagick++-dev \
-  libxml2-dev
+    default-jdk \
+    libcurl4-openssl-dev \
+    libmagick++-dev \
+    libxml2-dev && \
+  update-alternatives --display java
 
 # Add new packages here (in alphabetical order)
 RUN R CMD javareconf && install2.r --error \
