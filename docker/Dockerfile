@@ -54,6 +54,7 @@ RUN install2.r --error \
   knitr \
   magick \
   markdown \
+  officer \
   pander \
   readxl \
   spelling \
