@@ -40,6 +40,7 @@ RUN install2.r --error \
   RColorBrewer \
   RcppRoll \
   captioner \
+  car \
   dplyr \
   drat \
   ggplot2 \
