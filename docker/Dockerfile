@@ -1,7 +1,10 @@
 FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:520c60e
 
 # install npm
-RUN apt-get update && apt-get install -y npm
+RUN apt-get update && \
+  apt-get -y install curl gnupg && \
+  curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+  apt-get -y install nodejs npm
 
 # Install LaTeX
 RUN apt-get update \
