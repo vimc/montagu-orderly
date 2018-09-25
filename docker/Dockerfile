@@ -50,6 +50,7 @@ RUN install2.r --error \
   ggplot2 \
   ggpubr \
   gridExtra \
+  janitor \
   kableExtra \
   knitr \
   magick \
