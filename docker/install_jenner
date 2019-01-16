@@ -1,0 +1,5 @@
+#!/usr/bin/env Rscript
+drat:::add("vimc")
+install.packages("jenner")
+library(jenner)
+invisible(NULL)

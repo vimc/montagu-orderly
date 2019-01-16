@@ -61,6 +61,9 @@ RUN install2.r --error \
   spelling \
   tidyr
 
+COPY docker/install_jenner /tmp/install_jenner
+RUN /tmp/install_jenner && rm -f /tmp/install_jenner
+
 ARG GIT_ID='UNKNOWN'
 ARG GIT_BRANCH='UNKNOWN'
 ENV ORDERLY_MONTAGU_GIT_HASH $GIT_ID
