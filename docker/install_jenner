@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
 drat:::add("vimc")
-install.packages("jenner")
+install.packages(c("montagu", "jenner"))
 library(jenner)
 invisible(NULL)
