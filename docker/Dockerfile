@@ -54,6 +54,7 @@ RUN install2.r --error \
   kableExtra \
   knitr \
   magick \
+  mapproj \
   markdown \
   officer \
   pander \
