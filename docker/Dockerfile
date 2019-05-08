@@ -1,4 +1,4 @@
-FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:9e61dc6
+FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:e4555cc
 
 # install npm
 RUN apt-get update && \
