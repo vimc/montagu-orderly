@@ -18,7 +18,7 @@ local({
   if (!file.copy(path_config, path, overwrite = TRUE)) {
     stop("Error copying configuration")
   }
-  con <- orderly::orderly_db("destination", config = path)
+  con <- orderly::orderly_db("destination", root = path)
   DBI::dbDisconnect(con)
 
   message("Initialised orderly repo at ", path)
