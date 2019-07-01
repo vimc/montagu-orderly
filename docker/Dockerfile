@@ -37,6 +37,7 @@ RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 RUN apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
   libmagick++-dev \
+  libnlopt-dev \
   libxml2-dev
 
 # Add new packages here (in alphabetical order)
