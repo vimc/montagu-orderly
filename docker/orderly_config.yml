@@ -1,10 +1,12 @@
-source:
-  driver: RPostgres::Postgres
-  dbname: montagu
-  host: $MONTAGU_HOST
-  port: $MONTAGU_PORT
-  user: $MONTAGU_USER
-  password: $MONTAGU_PASSWORD
+database:
+  source:
+    driver: RPostgres::Postgres
+    args:
+      dbname: montagu
+      host: $MONTAGU_HOST
+      port: $MONTAGU_PORT
+      user: $MONTAGU_USER
+      password: $MONTAGU_PASSWORD
 
 fields:
   requester:
