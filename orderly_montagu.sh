@@ -1,2 +1,2 @@
 #!/bin/sh
-docker exec -it montagu_orderly_1 orderly $*
+docker exec -it orderly_web_orderly orderly $*

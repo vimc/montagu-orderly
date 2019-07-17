@@ -7,4 +7,4 @@ else
     shift
 fi
 
-docker exec -it montagu_orderly_1 $CMD $*
+docker exec -it orderly_web_orderly $CMD $*
