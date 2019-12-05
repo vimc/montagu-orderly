@@ -36,9 +36,16 @@ RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 # alphabetical order)
 RUN apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
+  libgdal-dev \
+  libgeos-dev \
   libmagick++-dev \
   libnlopt-dev \
-  libxml2-dev
+  libproj-dev \
+  libxml2-dev \
+  libudunits2-dev
+
+# system dependencies for rgdal and related geo-spatial packages
+RUN apt-get install gdal-bin -y
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
@@ -48,20 +55,30 @@ RUN install2.r --error \
   car \
   dplyr \
   drat \
+  foreach \
   ggplot2 \
   ggpubr \
+  ggthemes \
   gridExtra \
   janitor \
   kableExtra \
   knitr \
+  leaflet \
+  leaflet.extras \
   magick \
   mapproj \
+  mapview \
   markdown \
   officer \
   pander \
   readxl \
+  rgdal \
   spelling \
-  tidyr
+  tidyr \
+  tidyverse \
+  tmap \
+  tmaptools \
+  wesanderson
 
 RUN install2.r --repo "https://vimc.github.io/drat" \
   montagu \
