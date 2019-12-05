@@ -80,6 +80,10 @@ RUN install2.r --error \
   tmaptools \
   wesanderson
 
+RUN install2.r --repo "https://vimc.github.io/drat" \
+  montagu \
+  orderlyweb
+
 COPY docker/install_jenner /tmp/install_jenner
 RUN /tmp/install_jenner && rm -f /tmp/install_jenner
 
