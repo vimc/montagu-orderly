@@ -35,17 +35,15 @@ RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 # system dependencies required to install and run R packages (in
 # alphabetical order)
 RUN apt-get update && apt-get install -y \
+  gdal-bin \
   libcurl4-openssl-dev \
   libgdal-dev \
   libgeos-dev \
   libmagick++-dev \
   libnlopt-dev \
   libproj-dev \
-  libxml2-dev \
-  libudunits2-dev
-
-# system dependencies for rgdal and related geo-spatial packages
-RUN apt-get install gdal-bin -y
+  libudunits2-dev \
+  libxml2-dev
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
