@@ -1,4 +1,4 @@
-FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:f427544
+FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:master
 
 # install npm
 RUN apt-get update && \
@@ -35,9 +35,14 @@ RUN wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 # system dependencies required to install and run R packages (in
 # alphabetical order)
 RUN apt-get update && apt-get install -y \
+  gdal-bin \
   libcurl4-openssl-dev \
+  libgdal-dev \
+  libgeos-dev \
   libmagick++-dev \
   libnlopt-dev \
+  libproj-dev \
+  libudunits2-dev \
   libxml2-dev
 
 # Add new packages here (in alphabetical order)
@@ -48,20 +53,30 @@ RUN install2.r --error \
   car \
   dplyr \
   drat \
+  foreach \
   ggplot2 \
   ggpubr \
+  ggthemes \
   gridExtra \
   janitor \
   kableExtra \
   knitr \
+  leaflet \
+  leaflet.extras \
   magick \
   mapproj \
+  mapview \
   markdown \
   officer \
   pander \
   readxl \
+  rgdal \
   spelling \
-  tidyr
+  tidyr \
+  tidyverse \
+  tmap \
+  tmaptools \
+  wesanderson
 
 RUN install2.r --repo "https://vimc.github.io/drat" \
   montagu \
