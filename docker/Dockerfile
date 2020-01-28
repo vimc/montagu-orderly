@@ -76,7 +76,8 @@ RUN install2.r --error \
   tidyverse \
   tmap \
   tmaptools \
-  wesanderson
+  wesanderson \
+  writexl
 
 RUN install2.r --repo "https://vimc.github.io/drat" \
   montagu \
