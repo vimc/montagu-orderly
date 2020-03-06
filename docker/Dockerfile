@@ -47,6 +47,7 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
+  DT \
   RColorBrewer \
   RcppRoll \
   captioner \
@@ -72,6 +73,7 @@ RUN install2.r --error \
   readxl \
   rgdal \
   spelling \
+  stackoverflow \
   tidyr \
   tidyverse \
   tmap \
