@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+HERE=$(dirname $0)
+. $HERE/common
+
+docker pull $TAG_SHA
+
+VOLUME_ID=$(docker volume create)
+function cleanup {
+    echo "Cleaning up!"
+    set +e
+    docker volume rm $VOLUME_ID
+}
+trap cleanup EXIT
+
+docker run --rm --entrypoint /usr/bin/orderly_init \
+       -v "$VOLUME_ID":/orderly \
+       "$TAG_SHA" \
+       "/orderly"
+
+docker run --rm --entrypoint cat \
+       -v "$VOLUME_ID":/orderly \
+       "$TAG_SHA" \
+       "/orderly/orderly_config.yml"
