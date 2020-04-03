@@ -6,18 +6,24 @@ HERE=$(dirname $0)
 # Push the human-readable tagged versions here (the SHA versions were
 # pushed during build)
 docker push $TAG_BRANCH
-docker push $TAG_VERSION
 
 if [ $GIT_BRANCH == "master" ]; then
-   docker tag $TAG_BRANCH $TAG_LATEST
-   docker push $TAG_LATEST
+    ORDERLY_VERSION=$(docker run --rm --entrypoint bash \
+                             $TAG_LATEST \
+                             -c 'echo $ORDERLY_VERSION')
+    TAG_VERSION="${PACKAGE_ORG}/${PACKAGE_NAME}:${ORDERLY_VERSION}"
+    TAG_LATEST="${PACKAGE_ORG}/${PACKAGE_NAME}:latest"
+    docker tag $TAG_BRANCH $TAG_LATEST
+    docker push $TAG_LATEST
+    docker push $TAG_VERSION
 fi
+
 
 # Legacy repository support
 PRIVATE_REPOSITORY=docker.montagu.dide.ic.ac.uk:5000
 PRIVATE_TAG="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${GIT_SHA}"
 PRIVATE_BRANCH="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${GIT_BRANCH}"
-PRIVATE_VERSION="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:v${PKG_VERSION}"
+PRIVATE_VERSION="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${ORDERLY_VERSION}"
 docker tag $TAG_SHA $PRIVATE_TAG
 docker tag $TAG_SHA $PRIVATE_BRANCH
 docker tag $TAG_SHA $PRIVATE_VERSION
