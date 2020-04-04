@@ -9,7 +9,7 @@ Interaction with montagu.  These commands interact with the montagu version on t
 Make sure you have the most recent version of the container with with
 
 ```
-docker pull docker.montagu.dide.ic.ac.uk:5000/montagu-orderly:master
+docker pull vimc/montagu-orderly:master
 ```
 
 Update the montagu-report repo on the orderly volume
