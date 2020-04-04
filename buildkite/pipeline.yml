@@ -1,13 +1,13 @@
 steps:
-  - label: "Build"
+  - label: ":construction_worker: Build"
     command: docker/build
 
   - wait
 
-  - label: "Test"
+  - label: ":thinking: Test"
     command: docker/test
 
   - wait
 
-  - label: "Push"
+  - label: ":shipit: Push"
     command: docker/push
