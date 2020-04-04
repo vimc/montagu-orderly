@@ -1,4 +1,4 @@
-FROM docker.montagu.dide.ic.ac.uk:5000/orderly.server:master
+FROM vimc/orderly.server:master
 
 # install npm
 RUN apt-get update && \
