@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 HERE=$(dirname $0)
 . $HERE/common
 
@@ -31,7 +31,10 @@ PRIVATE_BRANCH="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${GIT_BRANCH}"
 PRIVATE_VERSION="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${ORDERLY_VERSION}"
 docker tag $TAG_SHA $PRIVATE_TAG
 docker tag $TAG_SHA $PRIVATE_BRANCH
-docker tag $TAG_SHA $PRIVATE_VERSION
 docker push $PRIVATE_TAG
 docker push $PRIVATE_BRANCH
-docker push $PRIVATE_VERSION
+
+if [ $GIT_BRANCH == "master" ]; then
+    docker tag $TAG_SHA $PRIVATE_VERSION
+    docker push $PRIVATE_VERSION
+fi
