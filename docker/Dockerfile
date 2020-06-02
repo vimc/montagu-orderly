@@ -56,7 +56,6 @@ RUN install2.r --error \
   drat \
   foreach \
   ggplot2 \
-  ggpubr \
   ggthemes \
   gridExtra \
   janitor \
