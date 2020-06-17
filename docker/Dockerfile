@@ -53,6 +53,7 @@ RUN install2.r --error \
   captioner \
   dplyr \
   drat \
+  flextable \
   foreach \
   ggplot2 \
   ggthemes \
