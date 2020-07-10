@@ -2,12 +2,9 @@ FROM vimc/orderly.server:master
 
 # install npm
 RUN apt-get update && \
-  apt-get -y install curl gnupg && \
-  apt remove --purge nodejs npm && \
-  apt autoclean && \
-  apt install -f && \
-  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-  apt-get -y install nodejs npm
+  apt-get install -y \
+    nodejs \
+    npm
 
 # Install LaTeX
 RUN apt-get update \
