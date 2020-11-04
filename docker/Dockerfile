@@ -48,6 +48,7 @@ RUN apt-get update && apt-get install -y \
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
   DT \
+  FinCal \
   RColorBrewer \
   RcppRoll \
   captioner \
@@ -55,6 +56,7 @@ RUN install2.r --error \
   drat \
   flextable \
   foreach \
+  gert \
   ggplot2 \
   ggthemes \
   gridExtra \
@@ -63,6 +65,7 @@ RUN install2.r --error \
   knitr \
   leaflet \
   leaflet.extras \
+  lessR \
   magick \
   mapproj \
   mapview \
