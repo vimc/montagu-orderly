@@ -21,19 +21,3 @@ if [ $GIT_BRANCH == "master" ]; then
     docker push $TAG_LATEST
     docker push $TAG_VERSION
 fi
-
-
-# Legacy repository support
-PRIVATE_REPOSITORY=docker.montagu.dide.ic.ac.uk:5000
-PRIVATE_TAG="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${GIT_SHA}"
-PRIVATE_BRANCH="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${GIT_BRANCH}"
-PRIVATE_VERSION="${PRIVATE_REPOSITORY}/${PACKAGE_NAME}:${ORDERLY_VERSION}"
-docker tag $TAG_SHA $PRIVATE_TAG
-docker tag $TAG_SHA $PRIVATE_BRANCH
-docker push $PRIVATE_TAG
-docker push $PRIVATE_BRANCH
-
-if [ $GIT_BRANCH == "master" ]; then
-    docker tag $TAG_SHA $PRIVATE_VERSION
-    docker push $PRIVATE_VERSION
-fi
