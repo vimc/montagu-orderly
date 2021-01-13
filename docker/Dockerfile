@@ -58,6 +58,7 @@ RUN install2.r --error \
   foreach \
   gert \
   ggplot2 \
+  ggpubr \
   ggthemes \
   gridExtra \
   janitor \
@@ -86,6 +87,8 @@ RUN install2.r --error \
 RUN install2.r --repo "https://vimc.github.io/drat" \
   montagu \
   orderlyweb
+
+RUN Rscript -e 'remotes::install_github("vimc/vimpact")'
 
 COPY docker/install_jenner /tmp/install_jenner
 RUN /tmp/install_jenner && rm -f /tmp/install_jenner
