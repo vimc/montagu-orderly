@@ -11,6 +11,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     ghostscript \
     imagemagick \
+    libgit2-dev \
     lmodern \
     texlive-fonts-recommended \
     texlive-humanities \
