@@ -48,11 +48,13 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
+  CoordinateCleaner \  
   DT \
   FinCal \
   RColorBrewer \
   RcppRoll \
   captioner \
+  circlize \
   dplyr \
   drat \
   flextable \
@@ -74,8 +76,12 @@ RUN install2.r --error \
   markdown \
   officer \
   pander \
+  pheatmap \
   readxl \
   rgdal \
+  rgeos \
+  rnaturalearth \
+  scatterpie \
   spelling \
   stackoverflow \
   tidyr \
@@ -90,6 +96,7 @@ RUN install2.r --repo "https://vimc.github.io/drat" \
   orderlyweb
 
 RUN Rscript -e 'remotes::install_github("vimc/vimpact")'
+RUN Rscript -e 'remotes::install_github("jokergoo/ComplexHeatmap")'
 
 COPY docker/install_jenner /tmp/install_jenner
 RUN /tmp/install_jenner && rm -f /tmp/install_jenner
