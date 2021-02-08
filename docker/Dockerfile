@@ -53,6 +53,7 @@ RUN install2.r --error \
   FinCal \
   RColorBrewer \
   RcppRoll \
+  R.utils \
   captioner \
   circlize \
   dplyr \
