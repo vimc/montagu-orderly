@@ -51,6 +51,7 @@ RUN install2.r --error \
   CoordinateCleaner \  
   DT \
   FinCal \
+  R.utils \
   RColorBrewer \
   RcppRoll \
   captioner \
