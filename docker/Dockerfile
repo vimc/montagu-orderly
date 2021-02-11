@@ -1,4 +1,4 @@
-FROM vimc/orderly.server:master
+FROM vimc/orderly.server:vimc-4192
 
 # install npm
 RUN apt-get update && \
