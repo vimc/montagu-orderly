@@ -48,7 +48,7 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
-  CoordinateCleaner \  
+  CoordinateCleaner \
   DT \
   FinCal \
   R.utils \
