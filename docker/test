@@ -5,7 +5,6 @@ HERE=$(dirname $0)
 
 # In case we switch agents between steps
 [ ! -z $(docker images -q $TAG_SHA) ] || docker pull $TAG_SHA
-[ ! -z $(docker images -q $TAG_WORKER_SHA) ] || docker pull $TAG_WORKER_SHA
 
 VOLUME_ID=$(docker volume create)
 function cleanup {
@@ -23,9 +22,4 @@ docker run --rm --entrypoint /usr/bin/orderly_init \
 docker run --rm --entrypoint cat \
        -v "$VOLUME_ID":/orderly \
        "$TAG_SHA" \
-       "/orderly/orderly_config.yml"
-
-docker run --rm --entrypoint cat \
-       -v "$VOLUME_ID":/orderly \
-       "$TAG_WORKER_SHA" \
        "/orderly/orderly_config.yml"
