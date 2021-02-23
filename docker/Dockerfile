@@ -58,6 +58,7 @@ RUN install2.r --error \
   circlize \
   dplyr \
   drat \
+  extrafont \
   flextable \
   foreach \
   gert \
