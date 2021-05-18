@@ -48,7 +48,7 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
-  CoordinateCleaner \ 
+  CoordinateCleaner \  
   DT \
   FinCal \
   R.utils \
@@ -56,8 +56,6 @@ RUN install2.r --error \
   RcppRoll \
   captioner \
   circlize \
-  countrycode \ 
-  devtools \
   dplyr \
   drat \
   extrafont \
@@ -96,7 +94,6 @@ RUN install2.r --error \
   writexl
 
 RUN install2.r --repo "https://vimc.github.io/drat" \
-  beers \
   montagu \
   orderlyweb
 
