@@ -48,9 +48,7 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
-  CoordinateCleaner \  
-  countrycode \
-  devtools \
+  CoordinateCleaner \ 
   DT \
   FinCal \
   R.utils \
@@ -58,6 +56,8 @@ RUN install2.r --error \
   RcppRoll \
   captioner \
   circlize \
+  countrycode \ 
+  devtools \
   dplyr \
   drat \
   extrafont \
@@ -96,12 +96,12 @@ RUN install2.r --error \
   writexl
 
 RUN install2.r --repo "https://vimc.github.io/drat" \
+  beers \
   montagu \
   orderlyweb
 
 RUN Rscript -e 'remotes::install_github("vimc/vimpact")'
 RUN Rscript -e 'remotes::install_github("jokergoo/ComplexHeatmap")'
-RUN Rscript -e 'remotes::install_github("mrc-ide/beers")'
 
 COPY docker/install_jenner /tmp/install_jenner
 RUN /tmp/install_jenner && rm -f /tmp/install_jenner
