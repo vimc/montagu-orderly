@@ -64,6 +64,7 @@ RUN install2.r --error \
   flextable \
   foreach \
   gert \
+  ggdist \
   ggplot2 \
   ggpubr \
   ggthemes \
