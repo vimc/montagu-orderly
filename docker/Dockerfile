@@ -70,6 +70,7 @@ RUN install2.r --error \
   ggpubr \
   ggthemes \
   gridExtra \
+  gt \
   janitor \
   kableExtra \
   knitr \
@@ -82,6 +83,7 @@ RUN install2.r --error \
   markdown \
   officer \
   pander \
+  patchwork \
   pheatmap \
   readxl \
   rgdal \
