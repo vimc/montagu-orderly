@@ -48,6 +48,8 @@ RUN apt-get update && apt-get install -y \
 
 # Add new packages here (in alphabetical order)
 RUN install2.r --error \
+  --repos https://cloud.r-project.org \
+  --repos https://mrc-ide.r-universe.dev \
   CoordinateCleaner \ 
   DT \
   FinCal \
@@ -55,6 +57,7 @@ RUN install2.r --error \
   R.utils \
   RColorBrewer \
   RcppRoll \
+  beers \
   captioner \
   circlize \
   countrycode \ 
@@ -81,7 +84,9 @@ RUN install2.r --error \
   mapproj \
   mapview \
   markdown \
+  montagu \
   officer \
+  orderlyweb \
   pander \
   patchwork \
   pheatmap \
@@ -96,15 +101,10 @@ RUN install2.r --error \
   tidyverse \
   tmap \
   tmaptools \
+  vimpact \
   wesanderson \
   writexl
 
-RUN install2.r --repo "https://vimc.github.io/drat" \
-  beers \
-  montagu \
-  orderlyweb
-
-RUN Rscript -e 'remotes::install_github("vimc/vimpact")'
 RUN Rscript -e 'remotes::install_github("jokergoo/ComplexHeatmap")'
 
 COPY docker/install_jenner /tmp/install_jenner
