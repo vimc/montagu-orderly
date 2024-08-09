@@ -1,0 +1,14 @@
+#!/bin/bash
+set -eu
+
+if [ "$#" -ne 1 ]; then
+    echo "Expected exactly one argument, a package name"
+fi
+
+ORDERLY_CONTAINERS=$(docker ps --format '{{.Names}}' | grep "^orderly-web-orderly")
+PKG=$1
+
+for CONTAINER in $ORDERLY_CONTAINERS; do
+    echo "Installing $REF into $CONTAINER"
+    docker exec -it $CONTAINER Rscript -e "install.packages(\"$PKG\")"
+done
